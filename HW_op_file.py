@@ -1,5 +1,6 @@
 from pprint import pprint
 
+# Задача №1
 
 
 def read_cookbook(file_path):
@@ -30,6 +31,8 @@ result = read_cookbook('recipes.txt')
 
 pprint(result)
 
+# Задача №2
+
 
 def get_shop_list_by_dishes(dishes, persons):
     menu = read_cookbook('recipes.txt')
@@ -43,13 +46,12 @@ def get_shop_list_by_dishes(dishes, persons):
                     extra_item = (int(shopping_list[item['ingredient_name']]['quantity']) +
                                   int(items_list[item['ingredient_name']]['quantity']))
                     shopping_list[item['ingredient_name']]['quantity'] = extra_item
-
                 else:
                     shopping_list.update(items_list)
-        print(f"Для приготовления блюд на {persons} человек  нам необходимо купить:")
         pprint(shopping_list)
     except KeyError:
         print("Вы ошиблись в названии блюда, проверьте ввод")
 
 
-get_shop_list_by_dishes(['Омлет', 'Фахитос'], 10)
+get_shop_list_by_dishes(['Омлет', 'Фахитос'], 5)
+
